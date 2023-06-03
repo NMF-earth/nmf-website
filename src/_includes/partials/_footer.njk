@@ -1,0 +1,30 @@
+<footer class="text-black pb-4 pt-14 sm:pt-20 md:pt-32 main-container flex-row md:flex px-2 md:px-0">
+    <div class="pt-1 pb-3 md:pb-0 text-center md:text-left">
+        <p class="text-gray-500 inline-block align-middle">{{ site.author }} - GPLv3</p>
+    </div>
+    <div class="flex-1"></div>
+    <div class="flex-none mt-4 md:mt-0">
+        <div class="flex justify-around items-center space-x-2 md:space-x-6">
+            {% if site.dribble_url %}
+                <a aria-label="dribbble" target="_blank" href="{{ site.dribble_url }}">
+                    <svg class="fill-gray-500 hover:hover-link" width="26px" height="26px">{% svg "dribbble" %}</svg>
+                </a>
+            {% endif %}
+            {% if site.github_url %}
+                <a aria-label="github" target="_blank" href="{{ site.github_url }}">
+                    <svg class="fill-gray-500 hover:hover-link" width="26px" height="26px">{% svg "github" %}</svg>
+                </a>
+            {% endif %}
+            {% if site.figma_url %}
+                <a aria-label="figma" target="_blank" href="{{ site.figma_url }}">
+                    <svg class="fill-gray-500 hover:hover-link" width="26px" height="26px">{% svg "figma" %}</svg>
+                </a>
+            {% endif %}
+            {% if site.email_url %}
+                <a aria-label="email" target="_blank" href="{{ site.email_url }}">
+                    <svg class="fill-gray-500 hover:hover-link" width="26px" height="26px">{% svg "email" %}</svg>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</footer>

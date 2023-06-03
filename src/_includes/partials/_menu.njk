@@ -1,0 +1,76 @@
+<header class="block sm:hidden" x-data="{show: false}" @click.away="show = false">
+    <div class="mt-8">
+        <div class="mb-6 mp-4 text-center">
+            <a class="site-title" href="/">
+                {{ site.nmf_earth_prefix }}<span class="text-primary">.</span>
+                {{ site.nmf_earth_suffix }}
+            </a>
+        </div>
+        <div class="flex pl-6 justify-center">
+            <div @click="show = ! show" class="justify-content-center">
+                <div aria-label="menu" class="no-underline">
+                    {% badge "Menu",
+                    "menu" %}
+                </div>
+            </div>
+        </div>
+        <nav x-show="show" class="main-container text-center pt-10 pb-10 flex-col sm:flex-row space-x-0 sm:space-x-6">
+            {% for item in collections.page %}
+                <div class="pb-4 md:pb-0">
+                    {% if item.url == page.url %}
+                        <a aria-label="{{ item.data.title }}" class="no-underline hover:hover-link text-black font-semibold" href="{{ item.url }}">
+                            {{ item.data.title }}
+                        </a>
+                    {% endif %}
+                    {% if item.url != page.url %}
+                        <a aria-label="{{ item.data.title }}" class="text-gray-600 no-underline hover:hover-link" href="{{ item.url }}">
+                            {{ item.data.title }}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            {% if site.newsletter_url %}
+                <div class="pb-4 md:pb-0">
+                    <a aria-label="newletter" class="text-gray-500 no-underline hover:hover-link" href="{{ site.newsletter_url }}" target="_blank">
+                        Newletter
+                    </a>
+                </div>
+            {% endif %}
+        </nav>
+    </div>
+</header>
+<header class="hidden sm:block" class="text-lg text-black bg-white py-6 sm:py-8 md:py-10">
+    <nav class="flex flex-col sm:flex-row main-container sm:py-10 sm:py-14 space-x-0 sm:space-x-6">
+        <div class="flex-1 mp-4">
+            <a class="site-title" href="/">
+                {{ site.nmf_earth_prefix }}<span class="text-primary">.</span>
+                {{ site.nmf_earth_suffix }}
+            </a>
+        </div>
+        <div class="flex-1">
+            <div class="flex flex-row justify-end">
+                {% for item in collections.page %}
+                    <div class="pl-6">
+                        {% if item.url == page.url %}
+                            <a aria-label="{{ item.data.title }}" class="no-underline hover:hover-link text-black font-semibold" href="{{ item.url }}">
+                                {{ item.data.title }}
+                            </a>
+                        {% endif %}
+                        {% if item.url != page.url %}
+                            <a aria-label="{{ item.data.title }}" class="text-gray-600 no-underline hover:hover-link" href="{{ item.url }}">
+                                {{ item.data.title }}
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                {% if site.newsletter_url %}
+                    <div class="pb-4 md:pb-0 pl-6">
+                        <a aria-label="newletter" class="text-gray-500 no-underline hover:hover-link" href="{{ site.newsletter_url }}" target="_blank">
+                            Newletter
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</header>

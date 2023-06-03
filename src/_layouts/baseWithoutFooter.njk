@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include "partials/_head.njk" %}
+  <body>
+    <main class="font-sans leading-normal tracking-normal pb-10 main-container">
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
+    </main>
+  </body>
+</html>

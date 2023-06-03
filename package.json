@@ -1,0 +1,31 @@
+{
+  "name": "nmf.earth",
+  "description": "NMF.earth website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all -p dev:*",
+    "build": "run-s build:*",
+    "dev:11ty": "eleventy --serve",
+    "dev:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --watch --postcss",
+    "build:11ty": "eleventy",
+    "build:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --postcss"
+  },
+  "keywords": [
+    "eleventy",
+    "static"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "@tailwindcss/typography": "^0.5.2",
+    "alpinejs": "3.10.4",
+    "autoprefixer": "^10.4.7",
+    "eleventy-plugin-lazyimages": "^2.1.2",
+    "markdown-it": "^13.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.3"
+  }
+}

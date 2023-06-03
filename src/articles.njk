@@ -1,0 +1,35 @@
+---
+layout: baseWithMenu
+title: Articles
+order: 3
+tags: page
+pagination:
+    data: collections.articles
+    size: 4
+    alias: articles
+    reverse: true
+---
+
+{% for article in articles %}
+    <div class="flex flex-col sm:flex-row mb-6">
+        <div class="w-32 my-4 sm:my-7">
+            <small class="text-sm text-gray-500">{{ article.date | dateFormating }}</small>
+        </div>
+        <a class="flex-1 no-underline" aria-label="{{ article.data.title }}" href="{{ article.url }}">
+            <div class='py-6 px-8 flex-1 rounded-lg transition ease-in-out delay-50 background-hover lg:bg-white hover:background-hover
+                    active:bg-gray-50'>
+                <p class="text-2xl text-gray-800 block font-semibold">
+                    {{ article.data.title }}
+                </p>
+                <p class="text-gray-600 my-4">
+                    {{ article.data.description }}
+                </p>
+                <p class="flex text-sm text-slate-600 font-medium">
+                    Read article
+                    <svg class="pl-1 fill-slate-600 hover:fill-black" width="20px" height="20px">{% svg "chevron-forward" %}</svg>
+                </p>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+{% include "partials/_pagination.njk" %}

@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .color-primary {
+        @apply text-sky-700;
+    }
+
+    .background-hover {
+        @apply bg-gray-50;
+    }
+
+    .hover-link {
+        @apply fill-gray-800 text-gray-800;
+    }
+
+    .main-container {
+        @apply px-8 sm:px-0 max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto;
+    }
+
+    .badge {
+        @apply bg-white px-5 py-1 rounded-full border mr-3 border-opacity-20;
+    }
+
+    a {
+        @apply underline;
+    }
+
+    p {
+        @apply mb-2 sm:mb-4 md:mb-6 lg:mb-8;
+    }
+    
+    .site-title {
+        @apply no-underline font-semibold text-xl inline-block;
+    }
+
+    .text-lg {
+        @apply text-neutral-600;
+    }
+    
+    div {
+        @apply mb-0;
+    }
+
+    .timeline {
+        @apply absolute w-3 h-3 bg-primary rounded-full mt-1.5 -left-1.5 border border-white;
+    }
+  }
