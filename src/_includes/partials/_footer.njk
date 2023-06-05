@@ -10,6 +10,11 @@
                     <svg class="fill-gray-500 hover:hover-link" width="26px" height="26px">{% svg "dribbble" %}</svg>
                 </a>
             {% endif %}
+            {% if site.poeditor_url %}
+                <a aria-label="poeditor" target="_blank" href="{{ site.poeditor_url }}">
+                    <svg class="fill-gray-500 hover:hover-link" width="26px" height="26px">{% svg "language" %}</svg>
+                </a>
+            {% endif %}
             {% if site.github_url %}
                 <a aria-label="github" target="_blank" href="{{ site.github_url }}">
                     <svg class="fill-gray-500 hover:hover-link" width="26px" height="26px">{% svg "github" %}</svg>
