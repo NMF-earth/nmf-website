@@ -50,18 +50,20 @@
         <div class="flex-1">
             <div class="flex flex-row justify-end">
                 {% for item in collections.page %}
-                    <div class="pl-6">
-                        {% if item.url == page.url %}
-                            <a aria-label="{{ item.data.title }}" class="no-underline hover:hover-link text-black font-semibold" href="{{ item.url }}">
-                                {{ item.data.title }}
-                            </a>
-                        {% endif %}
-                        {% if item.url != page.url %}
-                            <a aria-label="{{ item.data.title }}" class="text-gray-600 no-underline hover:hover-link" href="{{ item.url }}">
-                                {{ item.data.title }}
-                            </a>
-                        {% endif %}
-                    </div>
+                    {% if item.data.title != 'Privacy Policy' %}
+                        <div class="pl-6">
+                            {% if item.url == page.url %}
+                                <a aria-label="{{ item.data.title }}" class="no-underline hover:hover-link text-black font-semibold" href="{{ item.url }}">
+                                    {{ item.data.title }}
+                                </a>
+                            {% endif %}
+                            {% if item.url != page.url %}
+                                <a aria-label="{{ item.data.title }}" class="text-gray-600 no-underline hover:hover-link" href="{{ item.url }}">
+                                    {{ item.data.title }}
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% endif %}
                 {% endfor %}
                 {% if site.newsletter_url %}
                     <div class="pb-4 md:pb-0 pl-6">
